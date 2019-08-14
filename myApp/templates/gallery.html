@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block body %}
+
+<div class = "jumbotron">
+{% for image in images %}
+ <div class = "row">
+   <div class = "col-md-4">{{ image['username'] }}</div>
+   <div class = "col-md-4"><img src="{{ url_for('static', filename=image['name']) }}" width="120" height="90"</div>
+   <div class = "col-md-4">{{ image['description'] }}</div>
+   <div class="col-md-4"><a href='/edit_image?id={{ image['image_id'] }}'> edit </a><a href='/delete_image?id={{ image['image_id'] }}'> delete </a></div>
+   </div>
+{% endfor %}
+ <div class="col-md-4"><a href = 'add_image'>add image</a></div>
+</div>
+
+{% endblock %}

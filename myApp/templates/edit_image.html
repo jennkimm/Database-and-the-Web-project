@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block body %}
+
+<div class="jumbotron">
+     <a href="w">Click here</a> to change image
+<div> 
+     <form class ="form-horizontal" method="post" action="/edit_image">
+    {{ form.csrf_token }}
+    <div class='form-group'>
+        <div class='col-md-6'>
+            {% if form.description.errors%}
+               <ul class='errors'>
+                   {% for error in form.description.errors %}
+                       <li>{{ error }}</li>
+                   {% endfor %}
+               </ul>
+            {% endif %}
+            {{ form.description(class='form-control', classholder='description') }}
+        </div>
+     </div>
+        <div>
+            {{ form.image_id }}
+        </div>
+     <div class='form-group'>
+        <div class='col-md-6'>
+            {{ form.submit(class='btn btn-primary btn-block') }}
+        </div>
+     </div>
+     </form>
+</div>
+
+</div>
+ 
+{% endblock %}
+
