@@ -1,4 +1,4 @@
-* [ ]  **lab 12-part 2 exercise**
+* [ ]  **lab 12-part 2 exercise/ usage for each files**
 
 | File Name | What it does |
 | ------ | ------ |
